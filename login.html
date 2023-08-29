@@ -1,0 +1,50 @@
+<html>
+<head>
+<title>login</title>
+<body bgcolor="lavender";><center>
+<h1>Online bookstore</h1></center>
+
+<script>  
+function validateform(){  
+var Username=document.myform.Username.value;  
+var password=document.myform.password.value;  
+  
+if (Username==null || Username==""){  
+  alert("Name can't be blank");  
+  return false;  
+}else if(password.length<6){  
+  alert("Password must be at least 6 characters long.");  
+  return false;  
+  }  
+}  
+</script>  
+
+<body>
+
+<table align="left" >
+<form> <tr>
+<td><h4>Username</td>
+<td><input type="text" name="Username"></td>
+</tr>
+<tr>
+<td><h4>password</td>
+<td><input type="password" name="password"></td>
+</tr>
+</form>
+<p>Please register if you don't have an account</p>
+<tr>
+<td>
+<form name="myform" method="post" action="catalouge.html" onsubmit="return validateform()"/>
+<input type="submit" name="submit">
+</td>
+<td>
+<form method="post" action="reg.html"/>
+<input type="submit" value="register">
+&nbsp;&nbsp;
+<input type="reset" value="reset">
+</form>
+</td>
+</table>
+</body>
+</head>
+</html>

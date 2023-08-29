@@ -1,0 +1,30 @@
+<html>
+<body>
+<script>
+function validate(){
+var name=document.myform.name.value;
+var password=document.myform.password.value;
+
+if(name==null||name=="")
+{
+alert("Name can't be blank");
+return false;
+}
+if(password.length<6)
+{
+alert("password must be greater than 6 characters long");
+return false;
+}
+}
+</script>
+<body>
+<form name="myform" method="post" action="catalouge.html" onsubmit="return validate()">
+Name:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="name"><br/>
+<br/>
+Password:<input type="password" name="password"/><br/>
+<form method="post" action="catalouge.html"></br>
+<input type="submit" value="submit">
+</form>
+</body>
+</html>
+
