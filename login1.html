@@ -1,4 +1,4 @@
-<html>
+<!-- <html>
 <body>
 <script>
 function validate(){
@@ -26,5 +26,47 @@ Password:<input type="password" name="password"/><br/>
 <input type="submit" value="submit">
 </form>
 </body>
+</html> -->
+
+<html>
+  <body>
+    <script>
+      function validate() {
+        var name = document.myform.name.value;
+        var password = document.myform.password.value;
+
+        if (name == null || name === "") {
+          alert("Name can't be blank");
+          return false;
+        }
+
+        // Password validation
+        if (password.length < 8) {
+          alert("Password must be at least 8 characters long");
+          return false;
+        }
+
+        // Check for at least one special character
+        var specialCharRegex = /[!@#$%^&*(),.?":{}|<>]/;
+        if (!specialCharRegex.test(password)) {
+          alert("Password must contain at least one special character");
+          return false;
+        }
+
+        // Check for at least one number
+        var numberRegex = /\d/;
+        if (!numberRegex.test(password)) {
+          alert("Password must contain at least one number");
+          return false;
+        }
+      }
+    </script>
+    <form name="myform" method="post" action="catalouge.html" onsubmit="return validate()">
+      Name:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="name" /><br />
+      <br />
+      Password:<input type="password" name="password" /><br />
+      <input type="submit" value="Submit" />
+    </form>
+  </body>
 </html>
 
